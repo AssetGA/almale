@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "leaflet/dist/leaflet.css";
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -17,11 +19,41 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: geistMonoVF;
 }
 
-@layer utilities {
+/* @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+} */
+
+@font-face {
+  font-family: "geistMonoVF";
+  src: url("/fonts/GeistMonoVF.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: "geistVF";
+  src: url("/fonts/GeistVF.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 900; /* Black weight */
+  src: url("/fonts/Montserrat-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-bold";
+  font-weight: 900;
+  src: url("/fonts/Montserrat-Bold.ttf") format("truetype");
+}
+/* 
+.clip-path-wave {
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 50%);
+} */
