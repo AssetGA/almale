@@ -23,9 +23,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`Montserrat antialiased`}>
-        <Navbar />
+        <div className="xl:container xl:mx-auto">
+          <Navbar />
+        </div>
+
         <main>{children}</main>
-        <Footer />
+        <div className="xl:container xl:mx-auto">
+          {" "}
+          <Footer />
+        </div>
       </body>
     </html>
   );
