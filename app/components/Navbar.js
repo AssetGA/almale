@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
   const [language, setLanguage] = useState("KZ");
@@ -87,11 +89,15 @@ const Navbar = () => {
           {/* Переключение языка */}
           <div className="flex items-center space-x-2 text-green">
             <div className="flex-shrink-0 sm:mr-3">
-              <img
-                src="/basket.png"
-                alt="basket"
-                className="w-4 h-4 sm:w-6 sm:h-6"
-              />
+              <Link href={"/basket"}>
+                <Image
+                  src="/basket.png"
+                  width={8}
+                  height={8}
+                  alt="basket"
+                  className="w-4 h-4 sm:w-6 sm:h-6"
+                />
+              </Link>
             </div>
 
             <LanguageSwitcher />

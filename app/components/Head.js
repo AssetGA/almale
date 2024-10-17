@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import header1 from "../../public/img/Layer15.svg";
 import header2 from "../../public/img/Layer14.svg";
+import Link from "next/link";
 
 const Head = () => {
   return (
@@ -21,9 +22,12 @@ const Head = () => {
                 Безопасная и высококачественная посуда, <br /> созданная для
                 профессионалов <br /> и домашних кулинаров
               </p>
-              <button className="w-[270px] md:w-72 bg-gray-header rounded-md text-black text-sm font-bold mt-10 py-2 px-2">
+              <a
+                href="#production"
+                className="w-[270px] md:w-72 bg-gray-header rounded-md text-black text-sm font-bold mt-10 py-2 px-2"
+              >
                 Ознакомиться с ассортиментом
-              </button>
+              </a>
             </div>
           </div>
         </div>
