@@ -4,6 +4,6 @@
       "@/*": ["./*"]
     }
   },
-  "apiEndpoint": "https://almale-server-bot.vercel.app/api",
+  "apiEndpoint": "https://almale-server-bot-assets-projects.vercel.app/api",
   "isFireBase": false
 }
