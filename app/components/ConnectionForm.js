@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import botService from "../service/bot-service";
 
 const ConnectionForm = () => {
   const [formData, setFormData] = useState({
@@ -19,10 +20,22 @@ const ConnectionForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData); // Здесь можно обработать отправку формы (например, отправить данные на сервер)
-    setSubmitted(true); // Показать сообщение об успешной отправке
+    try {
+      const answer = await botService.get({ ...formData });
+      if (answer) {
+        setSubmitted(true); // Показать сообщение об успешной отправке
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      console.log("error", error.message);
+    }
   };
 
   return (

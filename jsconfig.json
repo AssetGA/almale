@@ -3,5 +3,7 @@
     "paths": {
       "@/*": ["./*"]
     }
-  }
+  },
+  "apiEndpoint": "https://almale-server-bot.vercel.app/api",
+  "isFireBase": false
 }
