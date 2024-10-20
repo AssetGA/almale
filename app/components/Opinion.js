@@ -54,7 +54,7 @@ const Opinion = () => {
   return (
     <div id="opinion" className="w-full">
       <div className="xl:px-20 py-20 flex flex-col items-center">
-        <div className="text-lg text-center font-bold">
+        <div className="text-xl text-center font-bold">
           Что говорят профессионалы
         </div>
         <p className="text-center py-5">Основные преймущества продукции</p>

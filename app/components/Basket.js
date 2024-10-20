@@ -118,6 +118,7 @@ const Basket = () => {
     // Здесь можно добавить обработку отправки адреса
     const isValid = validate();
     if (!isValid) return;
+    console.log("18546");
   };
 
   return (

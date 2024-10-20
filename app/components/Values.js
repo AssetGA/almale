@@ -8,7 +8,7 @@ const Values = () => {
   return (
     <div className="w-full" id="brand">
       <div className="flex flex-col py-20">
-        <p className="text-center font-bold text-lg">Ценности бренда</p>
+        <p className="text-center font-bold text-xl">Ценности бренда</p>
         <div className="grid grid-rows-3 sm:grid-rows-none sm:grid-cols-3 gap-5 lg:gap-20 w-auto xl:px-40 sm:py-20">
           <div className="flex flex-col items-center p-2">
             <Image

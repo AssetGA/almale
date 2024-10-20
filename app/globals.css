@@ -4,7 +4,7 @@
 
 @import "leaflet/dist/leaflet.css";
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -14,19 +14,19 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  /* color: var(--foreground);
+  background: var(--background); */
   font-family: geistMonoVF;
 }
 
-/* @layer utilities {
+@layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-} */
+}
 
 @font-face {
   font-family: "geistMonoVF";
