@@ -54,14 +54,17 @@ const Opinion = () => {
   return (
     <div id="opinion" className="w-full">
       <div className="xl:px-20 py-20 flex flex-col items-center">
-        <div className="text-xl text-center font-bold">
+        <div
+          className="text-xl text-center font-bold"
+          style={{ fontFamily: "Montserrat-Bold" }}
+        >
           Что говорят профессионалы
         </div>
         <p className="text-center py-5">Основные преймущества продукции</p>
         <div className="flex flex-row items-center">
           <button
             onClick={prevPage}
-            className={`w-10 h-full mx-5 hover:bg-gray-header -translate-y-24 ${
+            className={`w-10 h-full mx-5 hover:bg-gray-header ${
               currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""
             }`}
             disabled={currentPage === 1}
@@ -88,7 +91,7 @@ const Opinion = () => {
           </div>
           <button
             onClick={nextPage}
-            className={`w-10 h-full mx-5 hover:bg-gray-header -translate-y-24  ${
+            className={`w-10 h-full mx-5 hover:bg-gray-header ${
               currentPage === Math.ceil(opinions.length / itemsPerPage)
                 ? "opacity-50 cursor-not-allowed"
                 : ""

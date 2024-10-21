@@ -2,17 +2,14 @@ import "./globals.css";
 import "leaflet/dist/leaflet.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import localFont from "next/font/local";
+import StoreProvider from "./StoreProvider";
 
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
+const montserrat = localFont({
+  src: "../public/fonts/Montserat/Montserrat-Medium.ttf",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+});
 
 export const metadata = {
   title: "Almale",
@@ -21,18 +18,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`Montserrat antialiased`}>
-        <div className="xl:container xl:mx-auto">
-          <Navbar />
-        </div>
+    <StoreProvider>
+      <html lang="kz">
+        <body className={montserrat.className}>
+          <div className="xl:container xl:mx-auto">
+            <Navbar />
 
-        <main>{children}</main>
-        <div className="xl:container xl:mx-auto">
-          {" "}
-          <Footer />
-        </div>
-      </body>
-    </html>
+            <main>{children}</main>
+            <Footer />
+          </div>
+        </body>
+      </html>
+    </StoreProvider>
   );
 }

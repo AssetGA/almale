@@ -17,13 +17,13 @@ const Navbar = () => {
     setLanguage(lang);
   };
   return (
-    <nav className="w-full bg-gray-header text-black mx-auto relative z-10">
+    <nav className="w-full bg-gray-header text-black mx-auto relative my-auto z-20">
       <div className="px-3 xl:px-10 mx-auto">
         <div className="flex items-center justify-between h-20">
           <div className="-mr-2 flex md:hidden">
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-black  hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="inline-flex items-center justify-center p-2 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             >
               <svg
                 className="h-6 w-6"
@@ -109,35 +109,35 @@ const Navbar = () => {
           <div className="flex flex-row">
             <div className="px-10 py-12 space-y-1 sm:px-3 font-bold text-2xl leading-loose">
               <a
-                href="#brand"
+                href="/#brand"
                 className="block px-3 py-2 font-medium focus:underline"
                 onClick={() => setIsOpen(false)}
               >
                 О бренде
               </a>
               <a
-                href="#production"
+                href="/#production"
                 className="block px-3 py-2 font-medium focus:underline"
                 onClick={() => setIsOpen(false)}
               >
                 Продукция
               </a>
               <a
-                href="#adventages"
+                href="/#adventages"
                 className="block px-3 py-2 font-medium focus:underline"
                 onClick={() => setIsOpen(false)}
               >
                 Преймущества
               </a>
               <a
-                href="#opinion"
+                href="/#opinion"
                 className="block px-3 py-2 font-medium focus:underline"
                 onClick={() => setIsOpen(false)}
               >
                 Отзывы
               </a>
               <a
-                href="#contact"
+                href="/#contact"
                 className="block px-3 py-2 font-medium focus:underline"
                 onClick={() => setIsOpen(false)}
               >

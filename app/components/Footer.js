@@ -8,17 +8,37 @@ const Footer = () => {
           <div className="w-[190px] h-4 m-1">
             <img src="/img/logo-white.png" alt="Alma-le" />
           </div>
-          <div className="w-72">
+          <div className="w-72 mt-2">
             Безопасная высококачественная посуда, созданная для профессионалов и
             домашних кулинаров
           </div>
         </div>
         <div className="w-full">
           <div className="flex flex-col items-end pt-6">
-            <a href="/">Instagram</a>
-            <a href="/">Facebook</a>
-            <a href="/">Youtube</a>
-            <a href="/">TikTok</a>
+            <a
+              href="https://www.instagram.com/almale_com?igsh=MWU2b2h0dWoxdnhrcQ=="
+              className="hover:bg-white hover:text-green-light py-2 sm:py-0"
+            >
+              Instagram
+            </a>
+            <a
+              href="/"
+              className="hover:bg-white hover:text-green-light py-2 sm:py-0"
+            >
+              Facebook
+            </a>
+            <a
+              href="https://youtube.com/@alma_le?si=3T04RCUBdC5RdP0P"
+              className="hover:bg-white hover:text-green-light py-2 sm:py-0"
+            >
+              Youtube
+            </a>
+            <a
+              href="/"
+              className="hover:bg-white hover:text-green-light py-2 sm:py-0"
+            >
+              TikTok
+            </a>
           </div>
         </div>
       </div>

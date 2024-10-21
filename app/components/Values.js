@@ -8,8 +8,13 @@ const Values = () => {
   return (
     <div className="w-full" id="brand">
       <div className="flex flex-col py-20">
-        <p className="text-center font-bold text-xl">Ценности бренда</p>
-        <div className="grid grid-rows-3 sm:grid-rows-none sm:grid-cols-3 gap-5 lg:gap-20 w-auto xl:px-40 sm:py-20">
+        <p
+          className="text-center font-bold text-xl"
+          style={{ fontFamily: "Montserrat-Bold" }}
+        >
+          Ценности бренда
+        </p>
+        <div className="grid grid-rows-3 sm:grid-rows-none sm:grid-cols-3 gap-5 lg:gap-20 w-auto xl:px-40 sm:py-20 px-5 sm:px-0">
           <div className="flex flex-col items-center p-2">
             <Image
               src={object1}
@@ -40,8 +45,8 @@ const Values = () => {
               alt="моменты жизни на кухне"
             />
             <p className="text-center pt-5">
-              Мы создали Alma Le вдохновившись теплыми семейными моментами на
-              кухне
+              Изготовленна из меди, алюминия и нержавеющей стали для
+              профессионалов и любителей
             </p>
           </div>
         </div>

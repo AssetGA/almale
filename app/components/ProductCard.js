@@ -15,7 +15,12 @@ const ProductCard = ({ product }) => {
 
       <div className="p-4">
         {/* Название товара */}
-        <h2 className="text-xl font-semibold text-gray-800">{product.name}</h2>
+        <h2
+          className="text-xl font-semibold text-gray-800"
+          style={{ fontFamily: "Montserrat-Bold" }}
+        >
+          {product.name}
+        </h2>
         <span className="text-sm">({product.diameter})</span>
 
         {/* Описание товара */}

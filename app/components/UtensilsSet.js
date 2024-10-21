@@ -10,7 +10,10 @@ const UtensilsSet = () => {
       <div className="flex flex-col md:flex-row bg-white rounded-lg p-4 max-w-4xl mx-auto my-10 sm:my-20">
         {/* Левая часть: основное изображение и миниатюры */}
         <div className="md:w-1/2 flex flex-col items-center">
-          <h2 className="text-xl font-semibold mb-2 sm:hidden px-5">
+          <h2
+            className="text-xl font-semibold mb-2 sm:hidden px-5"
+            style={{ fontFamily: "Montserrat-Bold" }}
+          >
             {utensil[0].name}
           </h2>
           {/* Описание товара */}
@@ -54,7 +57,10 @@ const UtensilsSet = () => {
         <div className="md:w-1/2 md:pl-8 flex flex-col justify-between">
           <div className="py-5">
             {/* Название товара */}
-            <h2 className="text-xl font-semibold mb-2 hidden sm:block">
+            <h2
+              className="text-xl font-semibold mb-2 hidden sm:block"
+              style={{ fontFamily: "Montserrat-Bold" }}
+            >
               {utensil[0].name}
             </h2>
             {/* Описание товара */}

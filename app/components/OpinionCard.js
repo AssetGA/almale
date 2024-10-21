@@ -15,7 +15,12 @@ const OpinionCard = ({ opinion }) => {
 
       <div className="text-center p-4 ">
         {/* Название товара */}
-        <h2 className="text-xl font-semibold text-gray-800">{opinion.name}</h2>
+        <h2
+          className="text-xl font-semibold text-gray-800"
+          style={{ fontFamily: "Montserrat-Bold" }}
+        >
+          {opinion.name}
+        </h2>
         <p className="text-gray-600 font-bold mt-2">{opinion.profession}</p>
         {/* Описание товара */}
         <p className="text-gray-600 mt-2">{opinion.message}</p>

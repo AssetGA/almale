@@ -1,20 +1,19 @@
 import React from "react";
-import Image from "next/image";
-import header1 from "../../public/img/Layer15.svg";
-import header2 from "../../public/img/Layer14.svg";
-import Link from "next/link";
 
 const Head = () => {
   return (
     <>
       <div className="w-full bg-[url('/img/main2.png')] sm:bg-[url('/img/главная.jpg')] bg-cover sm:bg-contain bg-no-repeat sm:bg-right flex flex-col sm:flex-row relative">
-        <div className="bg-[url('/img/Layer6.svg')] bg-contain bg-no-repeat px-12 py-12 sm:hidden -translate-y-16">
+        <div className="bg-[url('/img/Layer6.svg')] bg-contain bg-no-repeat px-12 py-12 sm:hidden -translate-y-16 z-10">
           .
         </div>
         <div className="w-full">
           <div className="w-full h-full bg-no-repeat left-0 sm:top-0 bg-[url('/img/Layer5.svg')] sm:bg-[url('/img/Layer14.svg')] bg-cover sm:bg-contain translate-y-60 sm:translate-y-0">
             <div className="flex flex-col text-white px-10 py-[44px] sm:py-[44px] lg:pl-[70px] md:py-[85px] lg:py-[130px] xl:pl-[180px] xl:py-[130px]">
-              <h1 className="font-bold text-lg">
+              <h1
+                className="font-bold text-xl"
+                style={{ fontFamily: "Montserrat-Bold" }}
+              >
                 Alma-Le - Семейные ценности <br /> и профессиональная посуда
                 <br /> на вашей кухне
               </h1>
@@ -22,12 +21,14 @@ const Head = () => {
                 Безопасная и высококачественная посуда, <br /> созданная для
                 профессионалов <br /> и домашних кулинаров
               </p>
-              <a
-                href="#production"
-                className="w-[270px] md:w-72 bg-gray-header rounded-md text-black text-sm font-bold mt-10 py-2 px-2"
-              >
-                Ознакомиться с ассортиментом
-              </a>
+              <div className="mt-10">
+                <a
+                  href="#production"
+                  className="bg-gray-header rounded-md text-black text-sm font-bold py-2 px-5 hover:bg-green hover:text-white hover:border hover:border-white"
+                >
+                  Ознакомиться с ассортиментом
+                </a>
+              </div>
             </div>
           </div>
         </div>

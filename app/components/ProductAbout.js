@@ -4,6 +4,7 @@ import React from "react";
 import ProductCard from "./ProductCard";
 import { haracter, products } from "../api/api";
 import Tooltip from "./Tooltip";
+import { Counter } from "./Counter";
 
 const ProductAbout = ({ product }) => {
   console.log("product", product);
@@ -15,7 +16,10 @@ const ProductAbout = ({ product }) => {
       <div className="flex flex-col md:flex-row bg-white rounded-lg p-4 max-w-4xl mx-auto my-20">
         {/* Левая часть: основное изображение и миниатюры */}
         <div className="md:w-1/2 flex flex-col items-center">
-          <h2 className="text-xl font-semibold mb-2 sm:hidden">
+          <h2
+            className="text-xl font-semibold mb-2 sm:hidden"
+            style={{ fontFamily: "Montserrat-Bold" }}
+          >
             {product.name}
           </h2>
           {/* Описание товара */}
@@ -59,7 +63,10 @@ const ProductAbout = ({ product }) => {
         <div className="md:w-1/2 md:pl-8 flex flex-col justify-between">
           <div className="py-5">
             {/* Название товара */}
-            <h2 className="text-xl font-semibold mb-2 hidden sm:block">
+            <h2
+              className="text-xl font-semibold mb-2 hidden sm:block"
+              style={{ fontFamily: "Montserrat-Bold" }}
+            >
               {product.name}
             </h2>
             {/* Описание товара */}
@@ -98,6 +105,8 @@ const ProductAbout = ({ product }) => {
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
+
+      <Counter />
     </div>
   );
 };

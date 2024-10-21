@@ -18,7 +18,7 @@ const LanguageSwitcher = () => {
     <div className="relative inline-block text-left">
       <button
         onClick={toggleMenu}
-        className={`inline-flex justify-center w-full px-2 sm:px-4 py-2 text-sm font-medium text-white bg-green rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+        className={`inline-flex justify-center w-full px-2 sm:px-4 py-2 text-sm font-medium text-white bg-green rounded-md shadow-sm hover:bg-green-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
       >
         {selectedLanguage}
       </button>

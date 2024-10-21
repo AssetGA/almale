@@ -8,8 +8,13 @@ const Adventages = () => {
   return (
     <div id="adventages" className="w-full">
       <div className="flex flex-col py-20">
-        <p className="text-center font-bold text-xl">Преймущества</p>
-        <div className="grid grid-rows-3 sm:grid-rows-none sm:grid-cols-3 gap-5 md:gap-20 w-auto xl:px-40 py-20">
+        <p
+          className="text-center font-bold text-xl"
+          style={{ fontFamily: "Montserrat-Bold" }}
+        >
+          Преймущества
+        </p>
+        <div className="grid grid-rows-3 sm:grid-rows-none sm:grid-cols-3 gap-5 md:gap-20 w-auto xl:px-40 py-20 px-5 sm:px-0">
           <div className="flex flex-col items-center ">
             <Image
               src={object1}
