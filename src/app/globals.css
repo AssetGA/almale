@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "leaflet/dist/leaflet.css";
+
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  /* color: var(--foreground);
+  background: var(--background); */
+  font-family: Montserrat-bold;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    @apply appearance-none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 400;
+  src: url("/fonts/Montserrat-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-bold";
+  font-weight: 400;
+  src: url("/fonts/Montserat/Montserrat-Bold.ttf") format("truetype");
+}
+
+/* 
+.clip-path-wave {
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 50%);
+} */

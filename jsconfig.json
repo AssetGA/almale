@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["./*"]
-    }
-  },
-  "apiEndpoint": "https://almale-server-bot-assets-projects.vercel.app/api",
-  "isFireBase": false
-}
