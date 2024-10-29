@@ -15,7 +15,7 @@ const authService = {
   },
   verifyGet: async (payload) => {
     const { data } = await httpAuth.patch("verify", payload);
-    console.log("data", data);
+    console.log("dataver", data);
     return data;
   },
 };

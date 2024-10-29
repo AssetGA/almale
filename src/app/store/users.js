@@ -28,8 +28,9 @@ const usersSlice = createSlice({
     usersRequested: (state) => {
       state.isLoading = true;
     },
-    userApi: (state, action) => {
+    userGetApi: (state, action) => {
       state.api = action.payload;
+      state.isLoading = false;
     },
     userUnauthorize: (state, action) => {
       state.auth = action.payload.auth;
@@ -72,6 +73,7 @@ const usersSlice = createSlice({
       }
       state.auth = action.payload.content;
       state.userId = action.payload.id;
+      state.api = action.payload.api;
       state.isLoading = false;
     },
     userLoggedOut: (state) => {
@@ -94,7 +96,6 @@ const usersSlice = createSlice({
 
 const { reducer: usersReducer, actions } = usersSlice;
 const {
-  usersInitialize,
   usersRequested,
   usersClearError,
   userCreated,
@@ -107,7 +108,7 @@ const {
   verifyRequestSend,
   verifyRequestFailed,
   userUnauthorize,
-  userApi,
+  userGetApi,
 } = actions;
 
 const authRequested = createAction("users/authRequested");
@@ -135,7 +136,6 @@ export const clearUsersError = () => async (dispatch) => {
 
 export const signUp = (payload) => async (dispatch) => {
   dispatch(authRequested());
-  console.log("payload signup", payload);
   try {
     const data = await authService.verify(payload);
     if (data.content === null) {
@@ -164,10 +164,13 @@ export const Verify = (payload) => async (dispatch) => {
   }
 };
 
-export const getApiUrl = () => async (dispatch) => {
+export const getApiUrl = (payload) => async (dispatch) => {
+  dispatch(usersRequested());
   try {
-    const data = await userService.getApi();
-    dispatch(userApi(data));
+    console.log("11111");
+    const { content } = await userService.getApi(payload);
+    console.log("apidata", content);
+    dispatch(userGetApi(data.content));
   } catch (error) {
     dispatch(verifyRequestFailed(error.message));
   }

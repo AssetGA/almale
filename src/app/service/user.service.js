@@ -7,8 +7,11 @@ const userService = {
     const { data } = await httpService.get(userEndpoint);
     return data;
   },
-  getApi: async () => {
-    const { data } = await httpService.get(userEndpoint + "/getApi");
+  getApi: async (payload) => {
+    const { data } = await httpService.get(userEndpoint + "getApi", {
+      params: payload,
+    });
+    console.lof("dataApi", data);
     return data;
   },
 };

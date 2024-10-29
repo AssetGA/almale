@@ -48,7 +48,6 @@ export const loadOrder = () => async (dispatch) => {
 export const orderCreate = (payload) => async (dispatch) => {
   try {
     const data = await orderService.create(payload);
-    console.log("orderdata", data);
   } catch (error) {
     dispatch(orderRequestFailed(error.message));
   }

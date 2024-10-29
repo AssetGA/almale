@@ -16,7 +16,6 @@ import {
   UnauthorizeUser,
   Verify,
 } from "../store/users";
-import Link from "next/link";
 
 const Basket = ({ lang, t }) => {
   const store = useAppStore();
@@ -28,9 +27,9 @@ const Basket = ({ lang, t }) => {
   }
   const dispatch = useAppDispatch();
   const { entity } = useAppSelector((state) => state.product);
-  const { entities, error, auth, api, userId } = useAppSelector(
-    (state) => state.users
-  );
+  const { error, auth, api, userId } = useAppSelector((state) => state.users);
+
+  console.log("api", api, "auth", auth, "userId", userId);
 
   const product = entity.length === 0 ? null : entity[0];
 
@@ -127,10 +126,6 @@ const Basket = ({ lang, t }) => {
   };
   const isValid = Object.keys(errors).length === 0;
 
-  useEffect(() => {
-    dispatch(getApiUrl());
-  }, [auth]);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     // Здесь можно добавить обработку отправки адреса
@@ -152,6 +147,7 @@ const Basket = ({ lang, t }) => {
   const handleSubmitCheck = (e) => {
     e.preventDefault();
     dispatch(Verify({ ...address, code: code }));
+
     setCode("");
     closeModal(); // Закрываем модальное окно после отправки
   };
@@ -167,9 +163,18 @@ const Basket = ({ lang, t }) => {
         userId: userId,
       })
     );
-    window.location.assign(`${api.content}`);
+
+    window.location.assign(`${api}`);
     dispatch(UnauthorizeUser());
   };
+
+  const handleBack = () => {
+    dispatch(UnauthorizeUser());
+  };
+
+  useEffect(() => {
+    dispatch(getApiUrl({ id: userId }));
+  }, [auth]);
 
   return (
     <div className="container mx-auto p-4  py-20">
@@ -389,12 +394,12 @@ const Basket = ({ lang, t }) => {
               </div>
 
               <div className="flex justify-center">
-                <Link
-                  href={`/${lang}/product`}
+                <button
                   className="border px-4 py-2 rounded-md mr-2 hover:bg-green-light hover:text-white"
+                  onClick={handleBack}
                 >
                   {t.basket.buttonKaspiBack}
-                </Link>
+                </button>
 
                 <button
                   onClick={handleGo}
