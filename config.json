@@ -6,6 +6,5 @@
   },
   "apiEndpoint": "https://almale-server-bot-assets-projects.vercel.app/api",
   "apiEndpoint2": "https://almale-server.vercel.app/api",
-  "isFireBase": false,
-  "paymentApi": "https://pay.kaspi.kz/pay/lipbcvwf"
+  "isFireBase": false
 }
