@@ -46,7 +46,6 @@ const {
 } = actions;
 
 export const loadProductList = (payload) => async (dispatch) => {
-  console.log("payloadproductlist", payload);
   dispatch(productRequested());
   try {
     const { content } = await productService.get(payload);

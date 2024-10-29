@@ -8,29 +8,33 @@ import { haracter } from "../api/api";
 import Tooltip from "./Tooltip";
 import { usePathname } from "next/navigation";
 import { useAppSelector } from "../store/hooks";
+import { listProductId } from "../api/listSrc";
 
-const ProductAbout = ({ lang }) => {
-  const products = useAppSelector((state) => state.product.entities);
+const ProductAbout = ({ lang, t }) => {
+  const products = useAppSelector((state) => state.product.entity);
   const loading = useAppSelector((state) => state.product.isLoading);
   const params = usePathname();
   // Проверяем, если продукты загружены
   if (loading) {
-    return <p>Загрузка...</p>;
+    return <p>{t.utensil.one}</p>;
   }
 
   if (!products || products.length === 0) {
-    return <p>Продукты не найдены</p>;
+    return <p>{t.utensil.two}</p>;
   }
 
-  console.log("newparams", params);
   const product = products.find((elem) => {
-    return elem._id === params.replace(`/${lang}/product/`, "");
+    return elem._id.toString() === params.split("/").pop();
   });
-  console.log("product", product);
 
   const filterProducts = products.filter((elem) => {
     return elem.name !== products[0].name && elem;
   });
+
+  const listSrc = listProductId.find((elem) => {
+    return elem.id === product._id;
+  });
+
   return (
     <div className="flex flex-col px-5">
       <div className="flex flex-col md:flex-row bg-white rounded-lg p-4 max-w-4xl mx-auto my-20">
@@ -40,42 +44,38 @@ const ProductAbout = ({ lang }) => {
             className="text-xl font-semibold mb-2 sm:hidden"
             style={{ fontFamily: "Montserrat-Bold" }}
           >
-            {product.name}
+            {product?.name}
           </h2>
           {/* Описание товара */}
-          <p className="mb-6 sm:hidden">{product.description}</p>
+          <p className="mb-6 sm:hidden">{product?.description}</p>
           {/* Основное изображение товара */}
-          <div className="mb-4 hover:shadow-lg">
-            <Image
-              className="w-full object-cover rounded-lg"
-              src={product.imageUrl}
-              width={320}
-              height={300}
-              alt={product.name}
-            />
-          </div>
-          {/* Миниатюры изображений */}
-          <div className="grid grid-cols-4 gap-2 sm:gap-3">
-            <img
-              className="object-cover rounded-lg cursor-pointer border border-gray-200 hover:border-gray"
-              src="https://via.placeholder.com/80"
-              alt="Миниатюра 1"
-            />
-            <img
-              className="object-cover rounded-lg cursor-pointer border border-gray-200 hover:border-gray"
-              src="https://via.placeholder.com/80"
-              alt="Миниатюра 2"
-            />
-            <img
-              className="object-cover rounded-lg cursor-pointer border border-gray-200 hover:border-gray"
-              src="https://via.placeholder.com/80"
-              alt="Миниатюра 3"
-            />
-            <img
-              className="object-cover rounded-lg cursor-pointer border border-gray-200 hover:border-gray"
-              src="https://via.placeholder.com/80"
-              alt="Миниатюра 4"
-            />
+          <div className="w*full">
+            <div className="mb-4 hover:shadow-lg">
+              <Image
+                className="w-full object-cover rounded-lg"
+                src={product?.imageUrl}
+                width={320}
+                height={300}
+                alt={product?.name}
+                priority
+              />
+            </div>
+            {/* Миниатюры изображений */}
+            <div className="grid grid-cols-4 gap-2 sm:gap-3">
+              {listSrc !== undefined &&
+                listSrc.arr.map((elem) => (
+                  <div key={elem._id} className="aspect-w-1 aspect-h-1">
+                    <Image
+                      className="object-cover rounded-lg cursor-pointer border border-gray-200 hover:border-gray"
+                      src={elem.src}
+                      width={200}
+                      height={200}
+                      alt="alma le"
+                      priority
+                    />
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
 
@@ -87,10 +87,10 @@ const ProductAbout = ({ lang }) => {
               className="text-xl font-semibold mb-2 hidden sm:block"
               style={{ fontFamily: "Montserrat-Bold" }}
             >
-              {product.name}
+              {product?.name}
             </h2>
             {/* Описание товара */}
-            <p className="mb-6 hidden sm:block">{product.description}</p>
+            <p className="mb-6 hidden sm:block">{product?.description}</p>
 
             <div className="hidden sm:grid grid-cols-6 gap-1 pb-10">
               {haracter.map((elem) => (
@@ -108,12 +108,12 @@ const ProductAbout = ({ lang }) => {
             <div className="flex flex-row justify-between">
               <Link href={`/${lang}/product`} className="right-0">
                 <div className="bg-green hover:bg-green-light text-white py-2 px-4 rounded-md hover:bg-blue-600">
-                  назад
+                  {t.productAbout.buttonBack}
                 </div>
               </Link>
               <Link href={`/${lang}/basket`} className="right-0">
                 <div className="bg-green hover:bg-green-light text-white py-2 px-4 rounded-md hover:bg-blue-600">
-                  Купить набор
+                  {t.productAbout.buttonBuy}
                 </div>
               </Link>
             </div>
@@ -123,7 +123,7 @@ const ProductAbout = ({ lang }) => {
       <div className="grid lg:grid-cols-3 grid-cols-2 gap-10 max-w-4xl mx-auto">
         {filterProducts.map((product) => (
           <div key={product._id}>
-            <ProductCard product={product} />
+            <ProductCard product={product} lang={lang} t={t} />
           </div>
         ))}
       </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Footer = ({ t }) => {
@@ -6,10 +7,16 @@ const Footer = ({ t }) => {
       <div className="w-full bg-green text-white text-sm">
         <div className="grid grid-cols-2 px-5 sm:px-20 lg:px-40 py-16">
           <div className="flex flex-col">
-            <div className="w-[190px] h-4 m-1">
-              <img src="/img/logo-white.png" alt="Alma-le" />
+            <div className="w-[190px] h-[30px] m-1">
+              <Image
+                src={"/img/logo-white.png"}
+                width={100}
+                height={100}
+                alt="Logo Alma le"
+                className="px-5 sm:px-0 w-full h-auto object-cover"
+              />
             </div>
-            <p className="w-72 mt-2">{t.footer.head}</p>
+            <p className="w-72">{t.footer.head}</p>
           </div>
           <div className="w-full">
             <div className="flex flex-col items-end pt-6">

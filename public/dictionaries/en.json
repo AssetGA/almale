@@ -84,5 +84,17 @@
     "errorEmail": "Mail is required",
     "errorMobile": "Check the number",
     "errorMobileCount": "Numbers only"
+  },
+  "utensil": {
+    "buttonBuy": "Buy",
+    "one": "Loading...",
+    "two": "Products found"
+  },
+  "productAbout": {
+    "buttonBack": "Back",
+    "buttonBuy": "Buy set"
+  },
+  "card": {
+    "buttonMore": "More"
   }
 }

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const ProductCard = ({ product, lang }) => {
+const ProductCard = ({ product, lang, t }) => {
   return (
     <div className="max-w-sm bg-white rounded-lg shadow-md overflow-hidden p-1">
       {/* Изображение товара */}
@@ -31,7 +31,7 @@ const ProductCard = ({ product, lang }) => {
         {/* Кнопка добавления в корзину */}
         <Link href={`/${lang}/product/` + product._id}>
           <button className="mt-4 bg-green text-white py-2 px-4 rounded-md hover:bg-green-light">
-            Подробнее
+            {t.card.buttonMore}
           </button>
         </Link>
       </div>

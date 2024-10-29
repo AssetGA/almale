@@ -84,5 +84,17 @@
     "errorEmail": "Почта обязательны для заполнения",
     "errorMobile": "Проверьте номер",
     "errorMobileCount": "Только цифры"
+  },
+  "utensil": {
+    "buttonBuy": "Купить",
+    "one": "Загрузка...",
+    "two": "Продукты не найдены"
+  },
+  "productAbout": {
+    "buttonBack": "Назад",
+    "buttonBuy": "Купить набор"
+  },
+  "card": {
+    "buttonMore": "Подробнее"
   }
 }

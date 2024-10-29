@@ -84,5 +84,17 @@
     "errorEmail": "Пошта толтыру үшін міндетті",
     "errorMobile": "Нөмірді тексеріңіз",
     "errorMobileCount": "Тек сандар"
+  },
+  "utensil": {
+    "buttonBuy": "Сатып алу",
+    "one": "Күту...",
+    "two": "Өнімдер табылмады"
+  },
+  "productAbout": {
+    "buttonBack": "Қайтып оралу",
+    "buttonBuy": "Жиынтықты сатып алу"
+  },
+  "card": {
+    "buttonMore": "Толығырақ"
   }
 }

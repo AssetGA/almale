@@ -1,4 +1,5 @@
 import UtensilsSet from "../../components/UtensilsSet";
+import { getDictionary } from "../dictionaries";
 
 export const metadata = {
   title: "Игра GO - о нас",
@@ -7,6 +8,7 @@ export const metadata = {
   robots: "index, follow",
 };
 
-export default function Page({ params: { lang } }) {
-  return <UtensilsSet lang={lang} />;
+export default async function Page({ params: { lang } }) {
+  const t = await getDictionary(lang);
+  return <UtensilsSet lang={lang} t={t} />;
 }
