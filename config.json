@@ -5,6 +5,6 @@
     }
   },
   "apiEndpoint": "https://almale-server-bot-assets-projects.vercel.app/api",
-  "apiEndpoint2": "https://almale-server-hd1pzxkvb-assets-projects.vercel.app/api",
+  "apiEndpoint2": "https://almale-server.vercel.app/api",
   "isFireBase": false
 }
