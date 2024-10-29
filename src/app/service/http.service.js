@@ -2,6 +2,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import configFile from "../../../config.json";
 
+axios.defaults.headers.common["Content-Type"] = "application/json";
+
 const http = axios.create({
   baseURL: configFile.apiEndpoint2,
 });
