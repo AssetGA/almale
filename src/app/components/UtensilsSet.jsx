@@ -3,19 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import ProductCard from "./ProductCard";
-import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { loadProductList } from "../store/productSlice";
-import { useEffect } from "react";
+import { useAppSelector } from "../store/hooks";
 import { listSrc } from "../api/listSrc";
 
 const UtensilsSet = ({ lang, t }) => {
   const products = useAppSelector((state) => state.product.entity);
   const isLoading = useAppSelector((state) => state.product.dataLoaded);
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(loadProductList({ lang: lang }));
-  }, [lang]);
 
   // Проверяем, если продукты загружены
   if (!isLoading) {
@@ -109,7 +102,7 @@ const UtensilsSet = ({ lang, t }) => {
           <div className="grid lg:grid-cols-3 grid-cols-2 gap-5 md:gap-10 max-w-4xl mx-auto p-5">
             {newProducts.map((product) => (
               <div key={product.name}>
-                <ProductCard product={product} lang={lang} />
+                <ProductCard product={product} lang={lang} t={t} />
               </div>
             ))}
           </div>
